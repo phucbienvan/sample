@@ -39,7 +39,7 @@ class UserService
     		$userSearch->where('name', 'like', '%' . $param['keyword']);
     	}
         
-    	return $userSearch->with("role",'group')
+    	return $userSearch->with('role', 'group')
             ->where('status', true)
             ->whereHas('schedule')
             ->paginate(5);
